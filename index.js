@@ -9,6 +9,7 @@ import {initBooks} from "./pages/books/books.js"
 import {initBooksNoPagination} from "./pages/books-nopagination/books.js"
 import { initCreateHotel } from "./pages/createHotel/createHotel.js"
 import { initListOfHotels } from "./pages/showAllHotels/showAllHotels.js"
+import { initSearchHotelById } from "./pages/searchHotel/searchHotel.js";
 
 window.addEventListener("load", async () => {
 
@@ -17,6 +18,7 @@ window.addEventListener("load", async () => {
   const templateHome = await loadHtml("./pages/home/home.html")
   const templateCreateHotel = await loadHtml("./pages/createHotel/createHotel.html")
   const templateshowAllHotels = await loadHtml("./pages/showAllHotels/showAllHotels.html")
+  const templateSearchHotel = await loadHtml("./pages/searchHotel/searchHotel.html")
 
   const router = new Navigo("/",{hash:true});
   window.router = router
@@ -42,6 +44,10 @@ window.addEventListener("load", async () => {
         "/showAllHotels": () => {
           renderHtml(templateshowAllHotels, "content")
           initListOfHotels();
+        },
+        "/searchHotel": () => {
+          renderHtml(templateSearchHotel, "content")
+          initSearchHotelById();
         },
         "/createHotel": () => {
           renderHtml(templateCreateHotel, "content")
