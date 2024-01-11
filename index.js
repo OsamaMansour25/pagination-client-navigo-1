@@ -7,12 +7,16 @@ import {
 
 import {initBooks} from "./pages/books/books.js"
 import {initBooksNoPagination} from "./pages/books-nopagination/books.js"
+import { initCreateHotel } from "./pages/createHotel/createHotel.js"
+import { initListOfHotels } from "./pages/showAllHotels/showAllHotels.js"
 
 window.addEventListener("load", async () => {
 
   const templateBooks = await loadHtml("./pages/books/books.html")
   const templateBooksNoPagination = await loadHtml("./pages/books-nopagination/books.html")
   const templateHome = await loadHtml("./pages/home/home.html")
+  const templateCreateHotel = await loadHtml("./pages/createHotel/createHotel.html")
+  const templateshowAllHotels = await loadHtml("./pages/showAllHotels/showAllHotels.html")
 
   const router = new Navigo("/",{hash:true});
   window.router = router
@@ -35,10 +39,21 @@ window.addEventListener("load", async () => {
           renderHtml(templateBooks, "content")
           initBooks(match)
         },
+        "/showAllHotels": () => {
+          renderHtml(templateshowAllHotels, "content")
+          initListOfHotels();
+        },
+        "/createHotel": () => {
+          renderHtml(templateCreateHotel, "content")
+          initCreateHotel();
+          
+        },
+        
         "/books-no-pagination": (match) => {
           renderHtml(templateBooksNoPagination, "content")
           initBooksNoPagination()
-        }
+        },
+        
       })
       .notFound(() => document.getElementById("content").innerHTML ="<h2>404 - Page not found</h2>")
       .resolve()

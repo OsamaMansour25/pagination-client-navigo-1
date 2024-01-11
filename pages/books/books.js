@@ -1,6 +1,6 @@
 import { sanitizeStringWithTableRows } from "../../utils.js"
 import {API_URL} from "../../settings.js"
-const API_ENDPOINT = `${API_URL}/books`;
+const API_ENDPOINT = `${API_URL}/hotels`;
 
 //These values are not declared as constants, to allow for changing them due to user interaction
 let pageSize = 10;
@@ -51,9 +51,9 @@ async function fetchData(page = 0) {
   
 }
 
-function displayData(books) {
-  const tableRows = books.map(book => `<tr><td>${book.author}</td><td>${book.title}</td></tr>`).join('')
-  document.getElementById('book-rows').innerHTML = sanitizeStringWithTableRows(tableRows);
+function displayData(hotels) {
+  const tableRows = hotels.map(hotels => `<tr><td>${hotels.id}</td><td>${hotels.name}</td></tr>`).join('')
+  document.getElementById('hotel-rows').innerHTML = sanitizeStringWithTableRows(tableRows);
 }
 
 function displayPagination(totalPages, currentPage) {

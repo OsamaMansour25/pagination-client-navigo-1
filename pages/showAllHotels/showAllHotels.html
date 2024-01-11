@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>All hotels</title>
+</head>
+
+<body>
+    <div class="template">
+        <section id="Hotels">
+            <h2>Show all hotels</h2>
+            <figure>
+                <table role="grid">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Navn</th>
+                            <th>Adresse</th>
+                            <th>Antal Værelser</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hotels-table-rows"></tbody>
+                </table>
+            </figure>
+            <p id="error" style="color:red"></p>
+        </section>
+    </div>
+
+    <!-- Inkluder din JavaScript-fil her -->
+    <script type="module" src="showAllHotels.js"></script>
+</body>
+</html>
