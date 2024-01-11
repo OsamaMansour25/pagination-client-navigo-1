@@ -10,6 +10,10 @@ import {initBooksNoPagination} from "./pages/books-nopagination/books.js"
 import { initCreateHotel } from "./pages/createHotel/createHotel.js"
 import { initListOfHotels } from "./pages/showAllHotels/showAllHotels.js"
 import { initSearchHotelById } from "./pages/searchHotel/searchHotel.js";
+import { initEditHotel } from "./pages/editHotel/editHotel.js";
+import { initCreateRoom } from "./pages/createRoom/createRoom.js";
+import { initSignup } from "./pages/signup/signup.js";
+import { initCreateReservation } from "./pages/createReservation/createReservation.js";
 
 window.addEventListener("load", async () => {
 
@@ -19,6 +23,10 @@ window.addEventListener("load", async () => {
   const templateCreateHotel = await loadHtml("./pages/createHotel/createHotel.html")
   const templateshowAllHotels = await loadHtml("./pages/showAllHotels/showAllHotels.html")
   const templateSearchHotel = await loadHtml("./pages/searchHotel/searchHotel.html")
+  const templateEditHotel = await loadHtml("./pages/editHotel/editHotel.html")
+  const templateCreateRoom = await loadHtml("./pages/createRoom/createRoom.html")
+  const templateSignup = await loadHtml("./pages/signup/signup.html")
+  const templateReservation = await loadHtml("./pages/createReservation/createReservation.html")
 
   const router = new Navigo("/",{hash:true});
   window.router = router
@@ -41,13 +49,29 @@ window.addEventListener("load", async () => {
           renderHtml(templateBooks, "content")
           initBooks(match)
         },
+        "/signup": () => {
+          renderHtml(templateSignup, "content")
+          initSignup();
+        },
         "/showAllHotels": () => {
           renderHtml(templateshowAllHotels, "content")
           initListOfHotels();
         },
+        "/createReservation": () => {
+          renderHtml(templateReservation, "content")
+          initCreateReservation();
+        },
         "/searchHotel": () => {
           renderHtml(templateSearchHotel, "content")
           initSearchHotelById();
+        },
+        "/editHotel": () => {
+          renderHtml(templateEditHotel, "content")
+          initEditHotel();
+        },
+        "/createRoom": () => {
+          renderHtml(templateCreateRoom, "content")
+          initCreateRoom();
         },
         "/createHotel": () => {
           renderHtml(templateCreateHotel, "content")

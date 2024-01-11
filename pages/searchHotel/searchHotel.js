@@ -1,5 +1,5 @@
 import { API_URL } from "../../settings.js";
-document.addEventListener("DOMContentLoaded", initSearchHotelById);
+document.addEventListener("DOMContentLoaded", initSearchHotelById;
 
 
 export async function initSearchHotelById() {
