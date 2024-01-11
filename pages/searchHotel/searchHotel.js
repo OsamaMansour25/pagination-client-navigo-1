@@ -30,7 +30,7 @@ async function getHotelById() {
         return;
     }
 
-    const urlWithId = `${API_URL}/hotels/${id}`;  // Bruger template string til at inkludere ID
+    const urlWithId = `${API_URL}/hotels/${id}`; 
 
     try {
         const response = await fetch(urlWithId);

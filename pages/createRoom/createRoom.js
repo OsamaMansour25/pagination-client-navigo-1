@@ -28,7 +28,6 @@ async function createRoom() {
         const roomData = {
             numberOfBeds,
             price
-            // Tilføj yderligere felter efter behov
         };
 
         const response = await fetch(`${API_URL}/rooms?hotelId=${hotelId}`, makeOptions("POST", roomData, true));

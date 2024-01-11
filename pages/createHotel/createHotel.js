@@ -41,10 +41,11 @@ try {
     const response = await fetch(API_URL + "/hotels", makeOptions("POST", formData, true));
     if (response.ok) {
       // User signup was successful
-      const responseData = await response.json();
-      return responseData;
       alert("User was created successfully")
       window.location.href = "/";
+      const responseData = await response.json();
+      return responseData;
+      
     } else {
       // User signup failed
       const errorData = await response.json();
